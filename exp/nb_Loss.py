@@ -24,7 +24,7 @@ class Hook():
 
 def hook_ouptut(hook,mod,inp,out):
     if not hasattr(hook,'o'): hook.o = None
-    hook.o = out.detach().cpu()
+    hook.o = out.detach()
 
 class Feature_loss():
     def __init__(self,model,blocks,func):
