@@ -69,7 +69,7 @@ class Total_loss():
 
     def __call__(self,model,pred,targ):
         self.kloss = self.kl_loss(model,self.a)
-        self.ploss = self.ploss_func(pred,targ)
+        self.ploss = self.ploss_func(pred,targ).sum()
         return self.al*self.kloss + self.be*self.ploss
 
     def kl_loss(self,m,attr):
